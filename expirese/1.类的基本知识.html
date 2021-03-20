@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    class Person {
+        constructor(name, age) {
+            // 构造器中的this是谁  ---- 类的实例对象
+            this.name = name;
+            this.age = age;
+        }
+        // 一般方法
+        speak() {
+            // speck放在了哪里  ---- 类的原型对象上 供实例使用
+            // 通过Person实例调用speak时，speak中的this就是Person实例
+            console.log(`我叫${this.name},我的年龄是${this.age}`);
+        }
+    }
+
+    class Student extends Person {
+        constructor(name, age, grade) {
+            super(name, age);
+            this.grade = grade
+        }
+        speak() {
+            console.log(`我叫${this.name},我的年龄是${this.age},我读${this.grade}年级`);
+        }
+
+        study() {
+            // study放在了哪里  ---- 类的原型对象上 供实例使用
+            // 通过Student实例调用study时，study中的this就是Student实例
+            console.log('我很努力的学习');
+        }
+    }
+
+    const s1 = new Student('小张', 13, '高一');
+    s1.speak()
+    console.log(s1);
+
+
+    // const person1 = new Person('tom', 19);
+    // const person2 = new Person('jerry', 20);
+    // console.log(person1);
+    // console.log(person2);
+    // person1.speak();
+    // person2.speak();
+</script>
+</body>
+</html>
