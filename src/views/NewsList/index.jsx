@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import './index.css'
 
 export default class NewsList extends Component {

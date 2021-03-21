@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 
 export default class Child extends Component {
 
@@ -11,9 +11,17 @@ export default class Child extends Component {
         )
     }
 
+    componentWillReceiveProps(nextProps, nextContext) {
+        console.log('Child---componentWillReceiveProps', nextProps);
+    }
+
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         console.log('Child---shouldComponentUpdate');
         return true
+    }
+
+    componentWillUpdate(nextProps, nextState, nextContext) {
+        console.log('Child---componentWillUpdate');
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {

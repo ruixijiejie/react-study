@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Child from "./child";
 
@@ -29,8 +29,15 @@ export default class LifeCycle extends Component {
         this.setState({ carName: '奥拓' })
     }
 
-    componentWillMount() {
-        console.log('LifeCycle---componentWillMount');
+    static getDerivedStateFromProps(props, state) {
+        console.log('getDerivedStateFromProps', props, state);
+        return null
+    }
+
+    // 在更新之前获取快照
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log('getSnapshotBeforeUpdate', prevProps, prevState);
+        return null
     }
 
     render() {
@@ -43,7 +50,7 @@ export default class LifeCycle extends Component {
                 <button onClick={ this.death }>卸载组件</button>
                 <button onClick={ this.force }>不更改状态中的数据，强制更新一下</button>
                 <button onClick={ this.changeCar }>换车</button>
-                <Child carName={this.state.carName} />
+                <Child carName={ this.state.carName } />
             </div>
         )
     }
@@ -61,15 +68,9 @@ export default class LifeCycle extends Component {
         return true
     }
 
-    componentWillUpdate(nextProps, nextState, nextContext) {
-        console.log('LifeCycle---componentWillUpdate');
-    }
-
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log('LifeCycle---componentDidUpdate');
     }
-
-
 }
 
 

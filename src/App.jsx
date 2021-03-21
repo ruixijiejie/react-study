@@ -12,6 +12,8 @@ import LifeCycleExample from "./views/LifeCycleExample";
 // import LifeCycle from './views/LifeCycle';
 import NewLifeCycle from "./views/NewLifeCycle"
 import NewsList from "./views/NewsList";
+import DiffComponent from './views/DiffComponent';
+import TodoList from './views/TodoList';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
         {/*<LifeCycle />*/}
         <NewLifeCycle />
         <NewsList />
+        <DiffComponent />
+        <TodoList />
     </div>
   );
 }

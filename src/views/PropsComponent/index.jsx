@@ -1,4 +1,4 @@
-import Child from './child';
+import  Child from './child';
 
 function PropsComponent() {
     const p = { name: 'tt', age: 34, sex: '男' }
