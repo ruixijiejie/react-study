@@ -7,6 +7,11 @@ import PropsComponent from "./views/PropsComponent";
 import RefsComponent from "./views/RefsComponent";
 import UncontrolledComponent from "./views/UncontrolledComponent";
 import ControlledComponent from "./views/ControlledComponent";
+import HigherOrderFunc from "./views/HigherOrderFunc";
+import LifeCycleExample from "./views/LifeCycleExample";
+// import LifeCycle from './views/LifeCycle';
+import NewLifeCycle from "./views/NewLifeCycle"
+import NewsList from "./views/NewsList";
 
 function App() {
   return (
@@ -20,6 +25,11 @@ function App() {
         <RefsComponent />
         <UncontrolledComponent />
         <ControlledComponent />
+        <HigherOrderFunc />
+        <LifeCycleExample />
+        {/*<LifeCycle />*/}
+        <NewLifeCycle />
+        <NewsList />
     </div>
   );
 }
